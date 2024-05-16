@@ -43,7 +43,8 @@ Tout élément contenu dans la page sera un composant.
 
 #### Les maquettes:
 
-![[Capture d’écran 2024-05-16 à 16.27.27.png]]
+<img width="628" alt="Capture d’écran 2024-05-16 à 16 27 27" src="https://github.com/Pimer0/VoitureDex/assets/137108508/06855d1f-9ef1-466a-a19f-08da4225e18e">
+
 
 
 
