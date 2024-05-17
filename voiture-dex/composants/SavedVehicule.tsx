@@ -1,17 +1,22 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
+import { VOITURE_INTERPRETATION } from "../composants/const/VOITURE_INTERPRETATION";
 
 interface SavedVehiculeProps {
 	year: number;
 	model: string;
 	marque: string;
+	imageUrl: string;
 }
 
 const SavedVehicule: React.FC<SavedVehiculeProps> = ({
 	year,
 	model,
 	marque,
+	imageUrl,
 }) => {
+	const voiture = VOITURE_INTERPRETATION.find((v) => v.name === marque);
+	const logo = voiture ? voiture.image : null;
 	const [savedYear] = React.useState(year);
 	const [savedModel] = React.useState(model);
 	const [savedMarque] = React.useState(marque);
@@ -41,6 +46,7 @@ const SavedVehicule: React.FC<SavedVehiculeProps> = ({
 			<Text style={styles.p}>Year: {savedYear}</Text>
 			<Text style={styles.p}>Model: {savedModel}</Text>
 			<Text style={styles.p}>Marque: {savedMarque}</Text>
+			{logo && <Image style={{ width: 50, height: 50 }} source={logo}></Image>}
 		</View>
 	);
 };

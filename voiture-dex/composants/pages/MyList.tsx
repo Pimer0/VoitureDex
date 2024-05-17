@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
 	block: {
 		padding: 20,
 		margin: 10,
-		backgroundColor: "#18181B",
+		backgroundColor: "#09090B",
 		borderRadius: 5,
 		borderColor: "#71717A",
 	},
