@@ -23,6 +23,7 @@ const SearchBar = ({
 			value={value}
 			onChangeText={handleChange}
 			onSubmitEditing={handleSubmit}
+			placeholder="State (ex: MA) Plate (ex: 2THX88)"
 		/>
 	);
 };

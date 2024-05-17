@@ -1,10 +1,21 @@
 import React from "react";
 import { Text, StyleSheet, View } from "react-native";
+import SavedVehicule from "../SavedVehicule";
+import { SavedVehiclesContext } from "../context/SavedVehiclesContext";
 
-const MyComponent = () => {
+const MyList = () => {
+	const context = React.useContext(SavedVehiclesContext);
+	if (!context) {
+		throw new Error("SavedVehiclesContext is undefined");
+	}
+	const { savedVehicles } = context;
+
 	return (
 		<View style={styles.block}>
 			<Text style={styles.p}>Ma liste de bagnole</Text>
+			{savedVehicles.map((vehicle, index) => (
+				<SavedVehicule key={index} {...vehicle} />
+			))}
 		</View>
 	);
 };
@@ -29,4 +40,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default MyComponent;
+export default MyList;
