@@ -1,5 +1,5 @@
 # VoitureDex
-Humble projet applicatif mêlant pokédexe et voitures. Tu vas voire c'est cool 👍
+Humble projet applicatif mêlant pokédexe et voitures. Tu vas voir c'est cool 👍
 
 - - -
 
