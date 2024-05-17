@@ -6,9 +6,9 @@ import SearchBar from "../SearchBar";
 import VehiculeInfos from "../VehiculeInfos";
 import ButtonMyList from "../ButtonMyList";
 import ButtonAdd from "../ButtonAdd";
-import SavedVehicule from "../SavedVehicule";
 import { SavedVehiclesContext } from "../context/SavedVehiclesContext";
 import { useContext } from "react";
+import { VOITURE_INTERPRETATION } from "../const/VOITURE_INTERPRETATION";
 
 type SavedVehiculeProps = {
 	year: number;
@@ -93,6 +93,7 @@ const Home = ({ navigation }: { navigation: any }) => {
 							? vehicleData.content.year
 							: 0
 					}
+					imageUrl=""
 				/>
 				<ButtonMyList navigation={navigation} />
 				<ButtonAdd
