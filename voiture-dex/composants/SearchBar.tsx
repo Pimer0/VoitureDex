@@ -1,41 +1,41 @@
 import React, { useState } from "react";
-import { View, TextInput } from "react-native";
-import { StyleSheet } from "react-native";
+import { TextInput, StyleSheet } from "react-native";
 
-const SearchBar = () => {
-	const [searchText, setSearchText] = useState("");
-
-	const handleSearch = () => {
-		// Logique de recherche à implémenter ici
-		console.log("Recherche effectuée :", searchText);
-	};
+const SearchBar = ({
+	onSearch,
+}: {
+	onSearch: (usstate: string, plate: string) => void;
+}) => {
+	const [value, setValue] = useState("");
 
 	const handleSubmit = () => {
-		handleSearch();
+		const [usstate, plate] = value.split(" ");
+		onSearch(usstate, plate);
 	};
 
-	const styles = StyleSheet.create({
-		bar: {
-			backgroundColor: "#f0f0f0",
-			padding: 10,
-			borderRadius: 5,
-			margin: 10,
-			borderColor: "black",
-			width: 300,
-		},
-	});
+	const handleChange = (text: string) => {
+		setValue(text);
+	};
 
 	return (
-		<View>
-			<TextInput
-				placeholder="Plaque US ou UK"
-				value={searchText}
-				onChangeText={setSearchText}
-				onSubmitEditing={handleSubmit}
-				style={styles.bar}
-			/>
-		</View>
+		<TextInput
+			style={styles.bar}
+			value={value}
+			onChangeText={handleChange}
+			onSubmitEditing={handleSubmit}
+		/>
 	);
 };
 
 export default SearchBar;
+
+const styles = StyleSheet.create({
+	bar: {
+		backgroundColor: "#f0f0f0",
+		padding: 10,
+		borderRadius: 5,
+		margin: 10,
+		borderColor: "black",
+		width: 300,
+	},
+});

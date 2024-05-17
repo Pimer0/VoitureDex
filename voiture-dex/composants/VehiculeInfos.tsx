@@ -5,7 +5,6 @@ interface VehiculeInfosProps {
 	marque: string;
 	modele: string;
 	annee: number;
-	couleur: string;
 }
 
 const styles = StyleSheet.create({
@@ -30,14 +29,16 @@ const VehiculeInfos: React.FC<VehiculeInfosProps> = ({
 	marque,
 	modele,
 	annee,
-	couleur,
 }) => {
+	console.log("Marque:", marque);
+	console.log("Modèle:", modele);
+	console.log("Année:", annee);
+
 	return (
 		<View style={styles.block}>
 			<Text style={styles.h2}>Marque: {marque}</Text>
 			<Text style={styles.h2}>Modèle: {modele}</Text>
 			<Text style={styles.h2}>Année: {annee}</Text>
-			<Text style={styles.h2}>Couleur: {couleur}</Text>
 		</View>
 	);
 };
